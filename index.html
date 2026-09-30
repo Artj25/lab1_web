@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title> Проверка точки</title>
+
+  <link rel="stylesheet" href="styles.css"> <!-- link - связывает страницу с внешним ресурсом -->
+  <!-- rel - указывает что это стили, href - путь к этому файлу -->
+  <script src="geometry.js" defer></script>
+  <script src="graph.js" defer></script>
+  <script src="history.js" defer></script>
+  <script src="check.js" defer></script>
+  <!-- script - для подключения js, defer - подключает js и выполняет после чтения html -->
+</head>
+<body>
+  <header>
+    <p>ФИО: Рзаев Артур Русланович</p>
+    <p>Группа: P3132</p>
+    <p>Вариант: 22720</p>
+  </header>
+  <main>
+    <h1>Проверка точки</h1>
+
+    <form id="point-form"> <!-- поля ввода + кнопка отправки -->
+
+      <div>
+        <p>Координата X — выбери одно или несколько значений:</p>
+
+        <label class="x-option"><input type="checkbox" name="x" value="-2"><span>−2</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="-1.5"><span>−1.5</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="-1"><span>−1</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="-0.5"><span>−0.5</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="0"><span>0</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="0.5"><span>0.5</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="1"><span>1</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="1.5"><span>1.5</span></label>
+        <label class="x-option"><input type="checkbox" name="x" value="2"><span>2</span></label>
+      </div>
+
+      <label for="y">Координата Y:</label> <!-- подпись к полю, для котрого id=y -->
+      <input type="text" id="y" name="y" placeholder="Например: -1.5"> <!-- поля ввода -->
+
+      <div>
+        <p>Радиус R:</p>
+
+        <label><input type="radio" name="r" value="1"> 1</label>
+        <label><input type="radio" name="r" value="2" checked> 2</label>
+        <label><input type="radio" name="r" value="3"> 3</label>
+        <label><input type="radio" name="r" value="4"> 4</label>
+        <label><input type="radio" name="r" value="5"> 5</label>
+      </div>
+
+      <button type="submit">Показать значение</button>
+      <!-- кнопка отправки + нажатие отправляет форму(submit) -->
+    </form>
+
+    <canvas id="graph" width="500" height="500"></canvas>
+
+    <p id="result"></p>
+    <table>
+      <caption>История проверок</caption>
+
+      <thead>
+      <tr>
+        <th>X</th>
+        <th>Y</th>
+        <th>R</th>
+        <th>Результат</th>
+        <th>Дата и время</th>
+      </tr>
+      </thead>
+
+      <tbody id="results-body">
+      <!-- Сюда JavaScript будет добавлять строки -->
+      </tbody>
+    </table>
+    <p>Дробную часть вводите через точку, например: -1.5</p>
+  </main>
+</body>
+</html>
